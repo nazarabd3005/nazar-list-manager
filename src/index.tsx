@@ -89,3 +89,5 @@ class Listmanager<T> {
     }
   }
 }
+
+export default Listmanager;
