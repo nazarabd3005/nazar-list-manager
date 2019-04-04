@@ -82,7 +82,7 @@ class Listmanager<T> {
           id: value.id
         }
       }),
-    _clearData: (value:any) =>  
+    _clearData: () =>  
       dispatch({
         type: todos.CLEAR
       })
