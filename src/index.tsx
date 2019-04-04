@@ -1,6 +1,3 @@
-
-
-
 //types
 export const todos = {
   ADD: "ADD",
@@ -11,12 +8,9 @@ export const todos = {
 
 class Listmanager<T> {
   initialState = {
-    list : [] as T[]
-  }
-  constructor(){
-
-  }
-
+    list: [] as T[]
+  };
+  constructor() {}
 
   rootReducer = (state = this.initialState, action: any) => {
     switch (action.type) {
@@ -49,45 +43,45 @@ class Listmanager<T> {
         return state;
     }
   };
-  
+
   mapStateToProps = (state = this.initialState) => {
     var list = state.list;
     return {
       list
     };
-  }
-  
-  mapDispatchToProps = (dispatch: any) =>{
+  };
+
+  mapDispatchToProps = (dispatch: any) => {
     return {
       _additem: (value: any) =>
-      dispatch({
-        type: todos.ADD,
-        payload: {
-          id: value.id,
-          name: value.name
-        }
-      }),
-    _updateItem: (value: any) =>
-      dispatch({
-        type: todos.UPDATE,
-        payload: {
-          id: value.id,
-          name: value.name
-        }
-      }),
-    _deleteItem: (value: any) =>
-      dispatch({
-        type: todos.DELETE,
-        payload: {
-          id: value.id
-        }
-      }),
-    _clearData: () =>  
-      dispatch({
-        type: todos.CLEAR
-      })
-    }
-  }
+        dispatch({
+          type: todos.ADD,
+          payload: {
+            id: value.id,
+            name: value.name
+          }
+        }),
+      _updateItem: (value: any) =>
+        dispatch({
+          type: todos.UPDATE,
+          payload: {
+            id: value.id,
+            name: value.name
+          }
+        }),
+      _deleteItem: (value: any) =>
+        dispatch({
+          type: todos.DELETE,
+          payload: {
+            id: value.id
+          }
+        }),
+      _clearData: () =>
+        dispatch({
+          type: todos.CLEAR
+        })
+    };
+  };
 }
 
 export default Listmanager;

@@ -70,42 +70,41 @@ export default connect(
   a.mapDispatchToProps
 )(Home);
 ```
+
 # how to read and use
+
 ```tsx
 /// add
-   let param:User =  {
-      id: this.generateRandomNumber(),
-      name: this.state.name,
-    }
+let param: User = {
+  id: this.generateRandomNumber(),
+  name: this.state.name
+};
 
-    this.props._additem(param);
+this.props._additem(param);
 
 //update
-  let param:User =  {
-      id: this.state.id,
-      name: this.state.name,
-    }
+let param: User = {
+  id: this.state.id,
+  name: this.state.name
+};
 
-    this.props._updateItem(this.state);
+this.props._updateItem(this.state);
 
 //delete
- let param:User = {
-      id : idSelected,
-      name:textSelected,
-    }
+let param: User = {
+  id: idSelected,
+  name: textSelected
+};
 
-    this.props._deleteItem(param);
+this.props._deleteItem(param);
 
 //clear
-    this.props._clearData(null);
-  
+this.props._clearData(null);
 
 // read stored list
 
-this.props.list as User[]
+this.props.list as User[];
 ```
-
-
 
 ## License
 
