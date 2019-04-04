@@ -17,7 +17,7 @@ class Listmanager<T> {
 
   }
 
-  
+
   rootReducer = (state = this.initialState, action: any) => {
     switch (action.type) {
       case todos.ADD:
@@ -49,4 +49,43 @@ class Listmanager<T> {
         return state;
     }
   };
+  
+  mapStateToProps = (state = this.initialState) => {
+    var list = state.list;
+    return {
+      list
+    };
+  }
+  
+  mapDispatchToProps = (dispatch: any) =>{
+    return {
+      _additem: (value: any) =>
+      dispatch({
+        type: todos.ADD,
+        payload: {
+          id: value.id,
+          name: value.name
+        }
+      }),
+    _updateItem: (value: any) =>
+      dispatch({
+        type: todos.UPDATE,
+        payload: {
+          id: value.id,
+          name: value.name
+        }
+      }),
+    _deleteItem: (value: any) =>
+      dispatch({
+        type: todos.DELETE,
+        payload: {
+          id: value.id
+        }
+      }),
+    _clearData: (value:any) =>  
+      dispatch({
+        type: todos.CLEAR
+      })
+    }
+  }
 }
